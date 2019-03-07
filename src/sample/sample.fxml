@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller">
+    <center>
+        <BorderPane>
+            <center>
+                <ScrollPane minHeight="500" minWidth="600">
+                    <Canvas fx:id="canvas"/>
+                </ScrollPane>
+            </center>
+
+            <right>
+                <VBox>
+                    <HBox>
+                        <Button fx:id="info_mode_btn" text="Info"/>
+                        <Button fx:id="add_mode_btn" text="Add"/>
+                    </HBox>
+                    <ScrollPane minWidth="200">
+                        <VBox fx:id="right_pane"/>
+                    </ScrollPane>
+                </VBox>
+            </right>
+
+            <bottom>
+                <GridPane>
+                    <Button fx:id="compile_btn" text="Compile" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Button fx:id="fore_btn" text="Foreward" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                    <Button fx:id="clear_btn" text="Clear" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                    <Button fx:id="autoplay_btn" text="Autoplay" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                    <Button onMouseClicked="#handle_load_file" text="Load" GridPane.columnIndex="5"
+                            GridPane.rowIndex="0"/>
+                    <Button onMouseClicked="#handle_save_file" text="Save" GridPane.columnIndex="6"
+                            GridPane.rowIndex="0"/>
+                </GridPane>
+            </bottom>
+        </BorderPane>
+    </center>
+
+    <bottom>
+        <VBox>
+            <HBox spacing="2">
+                <Label text="Stack"/>
+                <HBox fx:id="stack_box"/>
+            </HBox>
+
+            <HBox spacing="2">
+                <Label text="Memory"/>
+                <HBox fx:id="memory_box"/>
+            </HBox>
+
+            <ScrollPane>
+                <Label fx:id="output" wrapText="true"/>
+            </ScrollPane>
+        </VBox>
+    </bottom>
+</BorderPane>
