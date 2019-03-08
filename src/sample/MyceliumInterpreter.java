@@ -27,7 +27,7 @@ public class MyceliumInterpreter {
     public MyceliumInterpreter(Color[][] image, Consumer<String> output) {
         this.stack = new ArrayList<>();
         this.memory = new ArrayList<>();
-        this.memory.add(1);
+        this.memory.add(0);
         this.gosubx = new ArrayList<>();
         this.gosuby = new ArrayList<>();
         this.gosubd = new ArrayList<>();
